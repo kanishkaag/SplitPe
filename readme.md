@@ -11,7 +11,7 @@ This project is a **microservices architecture** built with **FastAPI**, **Rabbi
 
 - Provides a **webhook integration** for platforms to log new orders.  
 - Automatically **splits payments** based on predefined rules (percentage/fixed).  
-- Manages **party balances** (credits, debits, refunds).  
+- Manages **party balances** in their wallet (credits, debits).  
 - Tracks a **history of splits** and marks orders as fully settled.  
 
 ---
@@ -47,3 +47,58 @@ The system consists of **three independent services**:
 - **ORM**: SQLAlchemy  
 
 ---
+
+
+##  Project Demo
+[Screencast from 2025-09-23 01-09-37.webm](https://github.com/user-attachments/assets/f3ab9a6b-1589-469d-b17f-fe6109d24f42)
+
+## RabbitMQ Pub/Sub Pattern Between Services
+<img width="1920" height="588" alt="Screenshot from 2025-09-23 00-27-34" src="https://github.com/user-attachments/assets/9c61de8b-de3b-48e1-9794-65ea1399f09c" />
+
+##  Setup Locally
+
+### Clone the repo
+```bash
+https://github.com/kanishkaag/SplitPe.git
+cd SplitPe
+```
+
+### Install Dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### Start RabbitMQ & MySQL server with docker compose
+```bash
+docker-compose up --build
+```
+
+### Start all the services by running a script
+```bash
+python start_services.py
+```
+
+### To run the frontend
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+### For Testing
+
+```bash
+Hit the webhook endpoint in Postman for intializing split for an order.
+method- POST
+url - http://localhost:8001/orders
+body -
+{
+  "idempotency_key": "test56d1455adnmfsd43",
+  "order_id": "ORD-2001",
+  "total_amount": 55763.99
+}
+```
+---
+### Built with ❤️ by Kanishka.  
+
+
