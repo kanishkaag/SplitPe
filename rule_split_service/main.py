@@ -31,6 +31,7 @@ def handle_order_recorded(message: dict):
     db = database.SessionLocal()
     parties = db.query(models.Party).all()
 
+    # Logic for splitting
     total_split = 0
     last_party = parties[-1]
 

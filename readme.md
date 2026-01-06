@@ -84,6 +84,13 @@ cd frontend
 npm install
 npm run dev
 ```
+### Initial Configuration (Required)
+```bash
+ Login to the frontend as Admin
+ Navigate to "Manage Parties"
+ Create required parties
+ Define revenue-sharing rules (percentage / fixed amount)
+```
 
 ### For Testing
 
