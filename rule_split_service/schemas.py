@@ -1,3 +1,4 @@
+# Pydantic schemas for party data and split results
 from pydantic import BaseModel
 from datetime import date
 
