@@ -1,3 +1,4 @@
+# consumes wallet credit events, updates balances, and exposes party & payout APIs
 from fastapi import FastAPI, Depends, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 import threading
